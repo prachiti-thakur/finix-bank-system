@@ -1,0 +1,29 @@
+{%extends "master.html"%}
+{%block content%}
+<center>
+    <div class="container">
+      <h1 style="text-decoration: underline;">Customers details</h1>
+    </div>
+</center>
+<div class="row">
+<div class="col-4"></div>
+<div class="col-4">
+    <div class="card p-5" style="height: 50vh;">
+        <div class="card-body">
+            <div class="card-title">
+                
+            </div>
+            <div class="card-text">
+                <div>id:{{sender.id}}</div>
+                <div>mail_id:{{sender.mail_id}}</div>
+                <div>amount:{{sender.amount}}</div>
+                <div><button type="button" class="btn btn-warning btn-lg"><a href="/transaction_two/{{sender.id}}" style="color:black;text-decoration:none">Transaction</a></button></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="col-4"></div>
+</div>
+
+
+{%endblock%}

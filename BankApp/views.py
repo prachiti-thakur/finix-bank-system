@@ -13,6 +13,10 @@ def home(request):
 def customer(request):
     customer=Customer.objects.all()
     return render(request,"customer.html",{"cust":customer})
+
+def details(request,cid):
+    sender=Customer.objects.get(id=cid)
+    return render(request,"details.html",{"sender":sender})
     
 def aboutUs(request):
     return render(request,"about_us.html",{})
