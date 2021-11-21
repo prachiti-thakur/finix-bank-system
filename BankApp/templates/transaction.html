@@ -1,0 +1,29 @@
+{%extends "master.html"%}
+{%block content%}
+<center>
+    <div class="container">
+      <h1 style="text-decoration: underline;">Select Sender</h1>
+    </div>
+</center>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">mail_id</th>
+        <th scope="col">amount(in RS)</th>
+        <th scope="col">Transaction</th>
+        
+      </tr>
+    </thead>
+    <tbody>
+       {%for c in cust%} 
+      <tr>
+        <th scope="row">{{c.id}}</th>
+        <td>{{c.mail_id}}</td>
+        <td>{{c.amount}}</td>
+        <td><button type="button" class="btn btn-warning btn-lg"><a href="/transaction_two/{{c.id}}" style="color:black;text-decoration:none">Transaction</a></button></td>
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+{%endblock%}

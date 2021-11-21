@@ -1,0 +1,42 @@
+{%extends "master.html"%}
+{%block content%}
+<center>
+    <div class="container">
+      <h1 style="text-decoration: underline;">Transaction_history</h1>
+    </div>
+</center>
+{%if messages %}
+{% for msg in messages%}
+{% if msg.tags == "error" %}
+<strong>ERROR! </strong> {{msg}}
+{% elif msg.tags == "success" %}
+<strong>SUCCESS! </strong> {{msg}}
+{% endif %}
+{% endfor %}
+{%endif%}
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">transaction_id</th>
+        <th scope="col">sender_id</th>
+        <th scope="col">receiver_id</th>
+        <th scope="col">amount(in RS)</th>
+        <th scope="col">Date_and_Time</th>
+        
+        
+      </tr>
+    </thead>
+    <tbody>
+       {%for  t in trans%} 
+      <tr>
+        <th scope="row">{{t.id}}</th>
+        <td>{{t.sender}}</td>
+        <td>{{t.receiver}}</td>
+        <td>{{t.amount}}</td>
+        <td>{{t.dnt}}</td>
+        
+      </tr>
+      {%endfor%}
+    </tbody>
+  </table>
+{%endblock%}
